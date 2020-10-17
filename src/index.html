@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monticello</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preload" href="assets/plugins/slider/slick.min.css" as="style" onload="this.rel='stylesheet'"
+        class="style_link">
+    <link rel="preload" href="assets/plugins/slider/slick-theme.min.css" as="style" onload="this.rel='stylesheet'"
+        class="style_link">
+    <link rel="preload" href="assets/plugins/fancybox-master/jquery.fancybox.min.css" as="style"
+        onload="this.rel='stylesheet'" class="style_link">
+    <link rel="preload" href="assets/plugins/leaflet/leaflet.min.css" as="style" onload="this.rel='stylesheet'"
+        class="style_link">
+    <link rel="preload" href="assets/css/style_svg.min.css" as="style" onload="this.rel='stylesheet'"
+        class="style_link">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preload" href="assets/css/style.min.css" as="style" onload="this.rel='stylesheet'" class="style_link">
+    <script>
+        const SITE_URL = '';
+        function supportsPreload() { let rl = document.createElement("link").relList; if (rl.supports && "preload") { return rl.supports("preload"); } else { return false; } }
+        if (!supportsPreload()) {
+            let style_links = document.getElementsByClassName("style_link");
+            for (let i = 0; i < style_links.length; i++) {
+                style_links[i].setAttribute("rel", "stylesheet");
+                style_links[i].removeAttribute("as");
+                style_links[i].removeAttribute("onload");
+            }
+            let font_links = document.getElementsByClassName("font_link");
+            for (let i = 0; i < font_links.length; i++) {
+                font_links[i].setAttribute("rel", "font");
+            }
+        }
+    </script>
+    <script>
+        function setViewport() { if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) { let ww = (window.innerWidth < window.screen.width) ? window.innerWidth : window.screen.width, mw = 400, ratio = ww / mw; if (ww < mw) { document.querySelector('[name="viewport"]').setAttribute('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', user-scalable=yes, width=' + ww); } else { document.querySelector('[name="viewport"]').setAttribute('content', 'initial-scale=1.0, maximum-scale=2, minimum-scale=1.0, user-scalable=yes, width=' + ww); } } }
+        setViewport();
+    </script>
+
+</head>
+
+<body>
+    <header class="js-header">
+        <div class="container">
+            <div class="menu">
+                <a href="#"><img src="assets/images/logo.png" alt="Logo"
+                        class="animate__animated animate__pulse animate__delay-5s animate__infinite animate__slow"></a>
+                <input type="checkbox" id="checkbox">
+                <nav>
+                    <label for="checkbox" class="toggle-button" data-open="Menu" data-close="&#10006;" onclick></label>
+                    <ul class="main-menu">
+                        <li class="nav_item"><a href="#about" class="nav_link">About us</a></li>
+                        <li class="nav_item"><a href="#projects" class="nav_link">Projects</a></li>
+                        <li class="nav_item"><a href="#news" class="nav_link">News</a></li>
+                        <li class="nav_item"><a href="#contact" class="nav_link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="social">
+                    <ul>
+                        <li><a href="https://www.facebook.com/" target="_blank"><span class="icon-facebook"></span></a>
+                        </li>
+                        <li><a href="https://twitter.com/" target="_blank"><span class="icon-twitter"></span></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><span
+                                    class="icon-instagram"></span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="slider_top" id="about">
+            <div class="contant">
+                <div class="title animate__backInLeft animate__animated">Simple & mordern</div>
+                <div class="slogan animate__rotateIn animate__animated animate__delay-2s">We make the world's beautiful
+                    every day</div>
+                <div class="scroll">
+                    <a href="#projects"></a>
+                </div>
+            </div>
+            <div class="contant">
+                <div class="title animate__backInLeft animate__animated">Mordern & simple</div>
+                <div class="slogan animate__rotateIn animate__animated animate__delay-2s">We make the world's beautiful
+                    every day</div>
+                <div class="scroll">
+                    <a href="#projects"></a>
+                </div>
+            </div>
+            <div class="contant">
+                <div class="title animate__backInLeft animate__animated">Simple & mordern</div>
+                <div class="slogan animate__rotateIn animate__animated animate__delay-2s">We make the world's beautiful
+                    every day</div>
+                <div class="scroll">
+                    <a href="#projects"></a>
+                </div>
+            </div>
+            <div class="contant">
+                <div class="title animate__backInLeft animate__animated">Mordern & simple</div>
+                <div class="slogan animate__rotateIn animate__animated animate__delay-2s">We make the world's beautiful
+                    every day</div>
+                <div class="scroll">
+                    <a href="#projects"></a>
+                </div>
+            </div>
+            <div class="contant">
+                <div class="title animate__backInLeft animate__animated">Simple & mordern</div>
+                <div class="slogan animate__rotateIn animate__animated animate__delay-2s">We make the world's beautiful
+                    every day</div>
+                <div class="scroll">
+                    <a href="#projects" class="nav_link"></a>
+                </div>
+            </div>
+        </div>
+        <div class="projects" id="projects">
+            <div class="container">
+                <h2>what we do</h2>
+                <div class="top_info">
+                    <div class="image wow animate__rotateIn" data-wow-duration="2s">
+                        <picture>
+                            <source srcset="assets/images/house1.jpg" type="image/png" media="(min-width:1001px)">
+                            <source srcset="assets/images/house1-400.jpg" type="image/png" media="(min-width:801px)">
+                            <source srcset="assets/images/house1-250.jpg" type="image/png" media="(max-width:800px)">
+                            <img src="assets/images/house1.jpg" alt="House">
+                        </picture>
+                    </div>
+                    <div class="about wow animate__fadeInRight" data-wow-duration="4s">
+                        <span>One World</span>
+                        <h3>Trade Center</h3>
+                        <div class="text">
+                            <p>Increasing prosperity in our lives can be accomplished by having the right frame of mind.
+                                The
+                                truth is, our thoughts are very powerful.</p>
+                            <p>They are capable of influencing every aspect of our daily lives, from our physical health
+                                to
+                                our social behaviors. I’m sure you’ve heard the adage, “As you think, so shall you be.”
+                            </p>
+                            <p>If we want to improve our lives, we must first improve our thoughts. Harnessing the power
+                                of
+                                thought in a positive way has the ability to create great change in our lives, including
+                                our
+                                financial well-being and prosperity. But how? How do we take something as intangible as
+                                thoughts, and manifest them into a physical reality?</p>
+                            <p>We must first understand that being prosperous is more than having a lot of money.
+                                Prosperity is a mindset, a way of interacting in our lives, and a way of thinking.
+                                Mastering
+                                this train of thought is not easy, but it is simple enough if we keep working on it
+                                consistently.</p>
+
+                            <p>Following are some ideas to help you improve your thoughts, and ultimately attract more
+                                prosperity into your life:</p>
+
+                            <p>Be grateful for the blessings in your life right now. Take a few minutes each day to
+                                express
+                                heartfelt gratitude for the good things in your life. Even more powerful, write a few of
+                                these blessings down each day. This helps to put your focus in the right direction — on
+                                abundance, not lack.</p>
+
+                            <p>Use positive affirmations to begin training yourself to think positively. Use “I am”
+                                statements such as “I am worthy of all that is good.” Write the statements down and
+                                repeat
+                                them nightly before bed. Over time, this will implant these thoughts into your
+                                subconscious
+                                mind, and you will begin to naturally believe them.</p>
+
+                            <p>Creative visualization can help you achieve prosperity by determining what it is you wish
+                                to
+                                achieve, and then thoroughly creating that image in your mind. This works in the same
+                                way
+                                affirmations do. Our subconscious will fill with images of prosperity, and eventually
+                                these
+                                subconscious “truths” will manifest in the physical. “See” yourself as being prosperous,
+                                and
+                                you will become so.</p>
+
+                            <p>Encourage yourself with the belief that you can achieve great things. This could also be
+                                one
+                                of your affirmations, but expand on it. If you know you can earn a certain salary, tell
+                                yourself you can earn more. Allow yourself to believe all things are possible, and you
+                                will
+                                gain the confidence needed to reach higher than you ever imagined you could. If you
+                                believe
+                                you can do it, you are more likely to take the risks associated with people who are
+                                highly
+                                successful. Prosperity and success go hand in hand, so take risks and aim higher.</p>
+
+                            <p>Start a savings account. As strange as it sounds, think about this: Like Attracts Like.
+                                Even
+                                if you can only afford to put a few dollars into your account every month, it will begin
+                                to
+                                build up and attract more money.</p>
+
+                            <p> Finally, believe you are already wealthy. The creative ability of our thoughts is such
+                                that
+                                we lend more power and energy to whatever we consistently focus on. Focusing on lack
+                                will
+                                create more lack. Focusing on wealth and prosperity will create . . . guess what?</p>
+
+                            <p>Remember that this is a process. You likely won’t change your circumstances in one day.
+                                But
+                                over time, with consistent focus, your thoughts will begin to attract what you want.
+                                Once
+                                you master this power of thought, there are truly no limits to what you can create!</p>
+                        </div>
+                        <a class="btn" href="#"><span>more details</span></a>
+                        <span class="address"><span class="icon-location"></span> New York City, United States - 1776
+                            feet</span>
+                    </div>
+                </div>
+                <div class="bottom_info">
+                    <div class="about wow animate__fadeInLeft" data-wow-duration="4s">
+                        <span>International</span>
+                        <h3>Commerce Centre</h3>
+                        <div class="text">
+                            <p>Successful businesses have many things in common, today we’ll look at the big ‘R’ of
+                                recognition and how a digital advertising network may help.</p>
+
+                            <p>Recognition can be illustrated by two individuals entering a crowded room at a party.
+                                Both
+                                walk to the far side of the room, one of them slips through the crowd easily and
+                                unnoticed
+                                as they reach the far side. The second person takes much longer to reach the far side
+                                because they are engaged in conversations along the way as they continue to meet
+                                acquaintances and friends during their path. Which type of person would you like to
+                                model
+                                your business after?</p>
+
+                            <p>Your business is in a continual battle for your customers’ recognition whether you know
+                                it
+                                or not. If you happen to be fortunate enough to be in a marketplace with very few
+                                competitors, that will not last for long. You need your business to be at the forefront
+                                of
+                                your client’s minds so that when they require your products or services, you are the
+                                go-to
+                                people.</p>
+
+                            <p>Marketing your business is a necessity. Putting your name and logo out there and keeping
+                                it
+                                there is a must. This lets clients know that you are “still around” and in business.
+                                Frequency is a good way to achieve the “stand out factor” in recognition. I am reminded
+                                of
+                                both television and radio ads I had heard of in the past. They run continually with a
+                                catch
+                                phrase or musical jingle over and over again on the radio or television until you are
+                                absolutely sick of hearing it. You also cannot get it out of your head. Although this
+                                type
+                                of advertising is expensive, it can be very effective, and the recognition factor is
+                                quite
+                                high. Television and radio can reach a large audience, and they are broad in their
+                                appeal.
+                                In a brief sentence, you are paying to market to both those that are your potential
+                                customers and a large segment of those who are not now and probably never will be your
+                                customers.</p>
+
+                            <p>There are more economical ways to pursue frequency, the point is to define your target
+                                market demographic, and invest your marketing funds into the locations that will best be
+                                seen by them.</p>
+
+                            <p>Another factor to consider is “can I market myself in a place where I will stand out from
+                                my
+                                competition, or where my competition does not have a presence?” Why would you market
+                                yourself in a flyer or newspaper right beside your competition and risk blending into a
+                                crowd, and ultimately being ignored? Another issue to look at is diversification. As the
+                                saying goes, “don’t put all your eggs in one basket”. When you look at your advertising
+                                budget for the year, try to find the affordable solutions that will continue to reap
+                                during
+                                the full year of your advertising budget. An expensive radio or television promotion may
+                                give short term gains for that weekend sale, but what about the rest of the year? Your
+                                clients may end up with the impression of where did they go, I haven’t seen or heard
+                                anything about them for so long.</p>
+
+                            <p>Don’t always look for the old standbys in marketing, but keep your eyes and ears open for
+                                the latest and greatest ways to market your business. With the costs of technology
+                                coming
+                                down dramatically new options such as digital advertising on LCD and Plasma screens are
+                                becoming more and more affordable, and the paper billboards and posters becoming a thing
+                                of
+                                the past. With the flexibility, and curb appeal of full color and motion video footage
+                                with
+                                computer generated graphics available to you, this is an option you don’t want to pass
+                                by
+                                without a good look. Ultimately, recognition is required if you want to get people “in
+                                the
+                                door” of your business (or on your website for the new e-businesses). This is going to
+                                cost
+                                you money, time and effort up front any way that you look at it, but if you have
+                                successfully reached your target market, the payoffs will be worth it.</p>
+                        </div>
+                        <a class="btn" href="#"><span>more details</span></a>
+                        <span class="address"><span class="icon-location"></span> Hong Kong - 1588 Feet</span>
+                    </div>
+                    <div class="image wow animate__rotateIn" data-wow-duration="2s">
+                        <picture>
+                            <source srcset="assets/images/house2.jpg" type="image/png" media="(min-width:1001px)">
+                            <source srcset="assets/images/house2-400.jpg" type="image/png" media="(min-width:801px)">
+                            <source srcset="assets/images/house2-250.jpg" type="image/png" media="(max-width:800px)">
+                            <img src="assets/images/house2.jpg" alt="House">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="news" id="news">
+            <div class="container">
+                <h2 class="wow animate__rubberBand" data-wow-duration="2s">Latest news</h2>
+                <div class="slider_news">
+                    <div class="contant">
+                        <a href="#">
+                            <picture>
+                                <source srcset="assets/images/news1.jpg" type="image/jpg" media="(min-width:801px)">
+                                <source srcset="assets/images/news1-250.jpg" type="image/jpg" media="(max-width:800px)">
+                                <img src="assets/images/news1.jpg" alt="House">
+                            </picture>
+                        </a>
+                        <div class="main">
+                            <div class="title"><a href="#">See The Unmatched Beauty Of The Great. Lakes.</a></div>
+                            <div class="text">Free directories: directories are perfect for customers that are...
+                                searching
+                                for a particular topic. What’s great about them is that you only have to post once
+                                and
+                                they
+                                are good for long periods of time. It saves a lot of your time when you don’t have
+                                to
+                                resubmit your information every week or every month. The bad news is most of your
+                                traffic
+                                won’t come from here. I still feel it is worth it to get your link out there. Just
+                                take
+                                one
+                                day and set it aside for posting to free directories. You won’t need to do it again
+                                for
+                                at
+                                least 6 months.
+                                2. Classified Ads: These are great for work from home businesses. Think about it.
+                                Where
+                                do
+                                people go when they are looking for a job? That’s right-the classifieds. The only
+                                downside
+                                to classified ads is that you have to resubmit them quite frequently. Once you find
+                                which
+                                classifieds bring you the most traffic you can concentrate on them and weed the
+                                others
+                                out.
+                                So it is really more time consuming in the beginning, and doesn’t have to be later
+                                on
+                                when
+                                you get the hang of things.
+                                3. Free article submissions/ezines: The best way to inform others about your product
+                                or
+                                service is to write an article about it. In your authors resource box, you can tell
+                                readers
+                                about yourself and where they can go to check out your product or service. This is
+                                also
+                                an
+                                excellent way to get free links to your site if you have one. There are a lot of
+                                webmasters
+                                out there who are looking for good articles they can post on their site. If they
+                                post
+                                yours,
+                                that is another site that is doing the advertising for you. All for free.
+                                4. URL Submissions: Probably the quickest and easiest thing to do to advertise your
+                                site.
+                                Just type “Free URL submission” in your search engine. When you get a list just
+                                enter
+                                the
+                                URL you are promoting and click submit. That’s it. It only takes a few seconds and
+                                your
+                                done. Just set a day aside once every 3 months and do this.
+                                5. Forum Posts: Put your product or service website in your signature file when you
+                                sign
+                                up
+                                on some forums. It will be displayed every time you make a post. Try to look for
+                                topics
+                                that
+                                you have some knowledge on, and can give a relevant answer too. Do not spam anyone,
+                                you
+                                will
+                                get kicked off the forum and you will get a bad reputation. Get involved asking and
+                                answering questions that pertain to your area of business. Forums are great because
+                                once
+                                you
+                                make a post it stays there forever. It will get moved to the archives eventually,
+                                but
+                                someone could still find it if they were searching the archives. Yes, there are many
+                                people
+                                who do.
+                                6. Traffic Exchanges: Probably the most time consuming way to advertise for free,
+                                but
+                                definately the most effective. Most forums I have visited have said in many posts
+                                that
+                                they
+                                received a lot of their profit from traffic exchanges. If you don’t want to spend
+                                the
+                                time
+                                surfing for credits, you do have the option of buying them. I would look into a
+                                program
+                                that
+                                lets you surf multiple websites at once like crazy browser. There are others and
+                                they
+                                are
+                                free to download. That way you can just spend one hour a day and get all your
+                                surfing in
+                                at
+                                once.
+                                7. News-groups: Become involved in a group that has to do with your kind of
+                                business.
+                                You
+                                can usually mail the group once per day, but I would encourage you to find something
+                                fresh
+                                to talk about each day. People will tune you out if they see the same message all
+                                the
+                                time.
+                                Remember to never Spam anyone. Only join groups with the same interests as yours. In
+                                other
+                                words, don’t sign up for a recipe swapping group when you are advertising shaving
+                                cream.
+                            </div>
+                            <div class="author">
+                                <img src="assets/images/author1.png" alt="Autor">
+                                <div class="about">
+                                    <span>Isaac Dunn</span>
+                                    <div class="data">09 Feb 2017</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contant">
+                        <a href="#">
+                            <picture>
+                                <source srcset="assets/images/news2.jpg" type="image/jpg" media="(min-width:801px)">
+                                <source srcset="assets/images/news2-250.jpg" type="image/jpg" media="(max-width:800px)">
+                                <img src="assets/images/news2.jpg" alt="House">
+                            </picture>
+                        </a>
+                        <div class="main">
+                            <div class="title"><a href="#">Hypnotize Yourself Into The Ghost.
+                                    Of Christmas Future</a></div>
+                            <div class="text">There are many things that are important to catalog design....
+                                Your images must be sharp and appealing. Your text and even the font you use for the
+                                text is important. The cover page design and the design of your catalog’s product
+                                pages
+                                all play important roles in designing a catalog that will bring in new customers and
+                                sales.
+
+                                However none of the things mentioned above are more important than the type of paper
+                                you
+                                will choose to print your catalog on. The “feel” of your catalog is important to
+                                your
+                                potential customers. The longer they have your catalog in their hands, the more
+                                product
+                                they will buy. In this article I will go over some of the many paper choices you
+                                have to
+                                print your catalog on.
+
+                                First you need to decide if the cover will be the same paper as the rest of your
+                                catalog. In most cases the cover will be of heavier weight then the interior pages.
+
+                                Second you will need to choose coated or uncoated paper for printing your catalog.
+                                Coated paper is for the glossier layouts and uncoated is more economical, but can
+                                still
+                                display your products well.
+
+                                So you have two things to consider first, “Will it be glossy paper or not?”, “Will
+                                my
+                                cover be the same weight as the interior pages of my catalog?”
+
+                                Once you have answered those two questions the next decision is what the weight of
+                                the
+                                paper will be. Most catalogs go with 60, 70, or 80 lb. weights. So it would be 60lb
+                                uncoated or coated, 70 lb. Coated or uncoated. 80 lb. Paper usually is only chosen
+                                for
+                                80 lb. Weight and above. Also, not all paper is measured by weight. Some is measured
+                                by
+                                thickness or “points”.
+
+                                Now the above is really over-simplified. There are other types of special paper you
+                                can
+                                choose from. There is textured paper, photographic paper, and other more expensive
+                                paper
+                                to choose from if you are selling a high-end or expensive product.
+
+                                There are also other considerations when choosing the paper your catalog will be
+                                printed
+                                on. Such as the method of printing you are going to choose.
+
+                                If you are going to have your catalog printed on a hot-set web press, then you can
+                                choose uncoated or coated paper. The heat will dry the ink as it prints your
+                                catalog. If
+                                your printer uses a cold-set web press then the ink air-dries and is absorbed into
+                                the
+                                paper. A cold-set web press cannot print on coated paper.
+
+                                If your printer uses a sheet-fed press then you can choose from any of the high
+                                quality
+                                papers they have available. The same goes for printers that do digital printing.
+
+                                It will depend a lot on the printer you choose. You need to find out what type of
+                                paper
+                                is available and you will want to see samples of the paper to get a better idea of
+                                which
+                                one you want to print your catalog on. Also ask your printer to suggest the
+                                different
+                                types of paper they think will be the best for your catalog.
+
+                                Here is a list of some of the types of paper your printer may have available for you
+                                to
+                                choose from or may be able to order for you.
+
+                                Dull Coated Paper
+
+                                Matte Coated Paper
+
+                                Glossy Coated Paper
+
+                                Antique Paper
+
+                                Vellum Paper
+
+                                Wove Paper
+
+                                Smooth Paper
+
+                                Felt Paper
+
+                                Linen Paper
+
+                                Fiber-added Paper
+
+                                Laid Paper
+
+                                Parchment
+
+                                Four things determine the quality of the paper, opacity, brightness, finish, and
+                                ppi.
+                                (Pounds per inch) Brightness affects the contrast and brilliance of the paper. It
+                                affects how your text will stand out on the pages of your catalog. Opacity is how
+                                much
+                                your ink is visible from the back of the page. If a paper is too opaque, your text
+                                and
+                                images from one page will be seen through onto another page that your customer is
+                                trying
+                                to read. The finish affects the feel of the pages and also how your images will
+                                look.
+                                The lower grade finishes produce grainier images while high quality finishes sharpen
+                                the
+                                look of your images.
+
+                                Ask your printer to provide you with samples or swatch booklets and a price list for
+                                printing your catalog on the various types of paper before you decide. You know what
+                                your budget is and paper is only one of the expenses you have to consider.
+                            </div>
+                            <div class="author">
+                                <img src="assets/images/author2.png" alt="Autor">
+                                <div class="about">
+                                    <span>Alice Ward</span>
+                                    <div class="data">30 Dec 2017</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contant">
+                        <a href="#">
+                            <picture>
+                                <source srcset="assets/images/news3.jpg" type="image/jpg" media="(min-width:801px)">
+                                <source srcset="assets/images/news3-250.jpg" type="image/jpg" media="(max-width:800px)">
+                                <img src="assets/images/news3.jpg" alt="House">
+                            </picture>
+                        </a>
+                        <div class="main">
+                            <div class="title"><a href="#">Hypnotize Yourself Into The Ghost.
+                                    Of Christmas Future</a></div>
+                            <div class="text">There are many things that are important to catalog design....
+                                Your images must be sharp and appealing. Your text and even the font you use for the
+                                text is important. The cover page design and the design of your catalog’s product
+                                pages
+                                all play important roles in designing a catalog that will bring in new customers and
+                                sales.
+
+                                However none of the things mentioned above are more important than the type of paper
+                                you
+                                will choose to print your catalog on. The “feel” of your catalog is important to
+                                your
+                                potential customers. The longer they have your catalog in their hands, the more
+                                product
+                                they will buy. In this article I will go over some of the many paper choices you
+                                have to
+                                print your catalog on.
+
+                                First you need to decide if the cover will be the same paper as the rest of your
+                                catalog. In most cases the cover will be of heavier weight then the interior pages.
+
+                                Second you will need to choose coated or uncoated paper for printing your catalog.
+                                Coated paper is for the glossier layouts and uncoated is more economical, but can
+                                still
+                                display your products well.
+
+                                So you have two things to consider first, “Will it be glossy paper or not?”, “Will
+                                my
+                                cover be the same weight as the interior pages of my catalog?”
+
+                                Once you have answered those two questions the next decision is what the weight of
+                                the
+                                paper will be. Most catalogs go with 60, 70, or 80 lb. weights. So it would be 60lb
+                                uncoated or coated, 70 lb. Coated or uncoated. 80 lb. Paper usually is only chosen
+                                for
+                                80 lb. Weight and above. Also, not all paper is measured by weight. Some is measured
+                                by
+                                thickness or “points”.
+
+                                Now the above is really over-simplified. There are other types of special paper you
+                                can
+                                choose from. There is textured paper, photographic paper, and other more expensive
+                                paper
+                                to choose from if you are selling a high-end or expensive product.
+
+                                There are also other considerations when choosing the paper your catalog will be
+                                printed
+                                on. Such as the method of printing you are going to choose.
+
+                                If you are going to have your catalog printed on a hot-set web press, then you can
+                                choose uncoated or coated paper. The heat will dry the ink as it prints your
+                                catalog. If
+                                your printer uses a cold-set web press then the ink air-dries and is absorbed into
+                                the
+                                paper. A cold-set web press cannot print on coated paper.
+
+                                If your printer uses a sheet-fed press then you can choose from any of the high
+                                quality
+                                papers they have available. The same goes for printers that do digital printing.
+
+                                It will depend a lot on the printer you choose. You need to find out what type of
+                                paper
+                                is available and you will want to see samples of the paper to get a better idea of
+                                which
+                                one you want to print your catalog on. Also ask your printer to suggest the
+                                different
+                                types of paper they think will be the best for your catalog.
+
+                                Here is a list of some of the types of paper your printer may have available for you
+                                to
+                                choose from or may be able to order for you.
+
+                                Dull Coated Paper
+
+                                Matte Coated Paper
+
+                                Glossy Coated Paper
+
+                                Antique Paper
+
+                                Vellum Paper
+
+                                Wove Paper
+
+                                Smooth Paper
+
+                                Felt Paper
+
+                                Linen Paper
+
+                                Fiber-added Paper
+
+                                Laid Paper
+
+                                Parchment
+
+                                Four things determine the quality of the paper, opacity, brightness, finish, and
+                                ppi.
+                                (Pounds per inch) Brightness affects the contrast and brilliance of the paper. It
+                                affects how your text will stand out on the pages of your catalog. Opacity is how
+                                much
+                                your ink is visible from the back of the page. If a paper is too opaque, your text
+                                and
+                                images from one page will be seen through onto another page that your customer is
+                                trying
+                                to read. The finish affects the feel of the pages and also how your images will
+                                look.
+                                The lower grade finishes produce grainier images while high quality finishes sharpen
+                                the
+                                look of your images.
+
+                                Ask your printer to provide you with samples or swatch booklets and a price list for
+                                printing your catalog on the various types of paper before you decide. You know what
+                                your budget is and paper is only one of the expenses you have to consider.
+                            </div>
+                            <div class="author">
+                                <img src="assets/images/author3.png" alt="Autor">
+                                <div class="about">
+                                    <span>Alice Ward</span>
+                                    <div class="data">30 Dec 2017</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contant">
+                        <a href="#">
+                            <picture>
+                                <source srcset="assets/images/news1.jpg" type="image/jpg" media="(min-width:801px)">
+                                <source srcset="assets/images/news1-250.jpg" type="image/jpg" media="(max-width:800px)">
+                                <img src="assets/images/news1.jpg" alt="House">
+                            </picture>
+                        </a>
+                        <div class="main">
+                            <div class="title"><a href="#">See The Unmatched Beauty Of The Great. Lakes.</a></div>
+                            <div class="text">Free directories: directories are perfect for customers that are...
+                                searching
+                                for a particular topic. What’s great about them is that you only have to post once
+                                and
+                                they
+                                are good for long periods of time. It saves a lot of your time when you don’t have
+                                to
+                                resubmit your information every week or every month. The bad news is most of your
+                                traffic
+                                won’t come from here. I still feel it is worth it to get your link out there. Just
+                                take
+                                one
+                                day and set it aside for posting to free directories. You won’t need to do it again
+                                for
+                                at
+                                least 6 months.
+                                2. Classified Ads: These are great for work from home businesses. Think about it.
+                                Where
+                                do
+                                people go when they are looking for a job? That’s right-the classifieds. The only
+                                downside
+                                to classified ads is that you have to resubmit them quite frequently. Once you find
+                                which
+                                classifieds bring you the most traffic you can concentrate on them and weed the
+                                others
+                                out.
+                                So it is really more time consuming in the beginning, and doesn’t have to be later
+                                on
+                                when
+                                you get the hang of things.
+                                3. Free article submissions/ezines: The best way to inform others about your product
+                                or
+                                service is to write an article about it. In your authors resource box, you can tell
+                                readers
+                                about yourself and where they can go to check out your product or service. This is
+                                also
+                                an
+                                excellent way to get free links to your site if you have one. There are a lot of
+                                webmasters
+                                out there who are looking for good articles they can post on their site. If they
+                                post
+                                yours,
+                                that is another site that is doing the advertising for you. All for free.
+                                4. URL Submissions: Probably the quickest and easiest thing to do to advertise your
+                                site.
+                                Just type “Free URL submission” in your search engine. When you get a list just
+                                enter
+                                the
+                                URL you are promoting and click submit. That’s it. It only takes a few seconds and
+                                your
+                                done. Just set a day aside once every 3 months and do this.
+                                5. Forum Posts: Put your product or service website in your signature file when you
+                                sign
+                                up
+                                on some forums. It will be displayed every time you make a post. Try to look for
+                                topics
+                                that
+                                you have some knowledge on, and can give a relevant answer too. Do not spam anyone,
+                                you
+                                will
+                                get kicked off the forum and you will get a bad reputation. Get involved asking and
+                                answering questions that pertain to your area of business. Forums are great because
+                                once
+                                you
+                                make a post it stays there forever. It will get moved to the archives eventually,
+                                but
+                                someone could still find it if they were searching the archives. Yes, there are many
+                                people
+                                who do.
+                                6. Traffic Exchanges: Probably the most time consuming way to advertise for free,
+                                but
+                                definately the most effective. Most forums I have visited have said in many posts
+                                that
+                                they
+                                received a lot of their profit from traffic exchanges. If you don’t want to spend
+                                the
+                                time
+                                surfing for credits, you do have the option of buying them. I would look into a
+                                program
+                                that
+                                lets you surf multiple websites at once like crazy browser. There are others and
+                                they
+                                are
+                                free to download. That way you can just spend one hour a day and get all your
+                                surfing in
+                                at
+                                once.
+                                7. News-groups: Become involved in a group that has to do with your kind of
+                                business.
+                                You
+                                can usually mail the group once per day, but I would encourage you to find something
+                                fresh
+                                to talk about each day. People will tune you out if they see the same message all
+                                the
+                                time.
+                                Remember to never Spam anyone. Only join groups with the same interests as yours. In
+                                other
+                                words, don’t sign up for a recipe swapping group when you are advertising shaving
+                                cream.
+                            </div>
+                            <div class="author">
+                                <img src="assets/images/author1.png" alt="Autor">
+                                <div class="about">
+                                    <span>Isaac Dunn</span>
+                                    <div class="data">09 Feb 2017</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contant">
+                        <a href="#">
+                            <picture>
+                                <source srcset="assets/images/news2.jpg" type="image/jpg" media="(min-width:801px)">
+                                <source srcset="assets/images/news2-250.jpg" type="image/jpg" media="(max-width:800px)">
+                                <img src="assets/images/news2.jpg" alt="House">
+                            </picture>
+                        </a>
+                        <div class="main">
+                            <div class="title"><a href="#">Effective Advertising Pointers.</a></div>
+                            <div class="text">Having a home based business is a wonderful asset to your life...
+                                The problem still stands, when it comes time to advertise your business for a cheap
+                                cost. I know you have looked for this answer everywhere; I am here to share a few
+                                simple
+                                yet creative ways, to advertise your new home business. A few suggestions would be,
+                                newspapers is the one source that many people go to, when they have just opened
+                                there
+                                business. You would need to research online, for newspapers that are in your area.
+                                Newspapers are a very simple yet effective tool to use to take your business from
+                                basic
+                                home based business to business galore. Having catchy phrases and pictures or
+                                photographs of your products should help spice it up. Knowing your audience is the
+                                key
+                                to businesses. There are also, radio stations you could call in, or even email too.
+                                If
+                                you are a communicator, you can try to get onto a radio station and just share your
+                                business. You would need to write an outline or some type of catchy jingle that will
+                                help you be different from the rest of the business. The creativity comes from
+                                within.
+                                Knowing your target and knowing what you provide is gold, will surely, make you
+                                stand
+                                out from the rest of the crowd. Did you know that creativity comes from the heart
+                                and
+                                soul in once you find the creative voice you will find all kinds of ways to
+                                advertise
+                                your home business without spending a fortune for a market rep when you can do it
+                                yourself saving yourself time and money where you can be spending it on something
+                                else.
+
+                                You may also want to try in write a catchy jingle that will catch your readers and
+                                target audience. Being creative with your jingle will sure bring you visitors to
+                                your
+                                business rather it’s a restaurant or corporate business many people have jingles
+                                like
+                                McDonalds, Wendy’s, Subway, and Pizza Hut these people came up with there own
+                                jingles to
+                                sale there products to there target audience. Another thing you can do is sit down
+                                and
+                                write out an outline of the things you’re trying to sale than right and catchy but
+                                simple jingle that will stop your audience dead in there tracks. Many people hire
+                                writers for there jingles in some right there jingles themselves which will also
+                                save
+                                you more money that way also without going over your budget. You can say something
+                                like
+                                Dixie Professional Writing Service always on your side. You can say something like
+                                that
+                                but with more expression to it but just remember to be creative enough to advertise
+                                your
+                                business.
+                            </div>
+                            <div class="author">
+                                <img src="assets/images/author2.png" alt="Autor">
+                                <div class="about">
+                                    <span>Dominic Freeman</span>
+                                    <div class="data">24 Apr 2017</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrow prev" onclick="PrevSlide()">&lt;</div>
+                <div class="arrow next" onclick="NextSlide()">&gt;</div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="container">
+                <h2>Gallery</h2>
+                <div class="photos">
+                    <div class="photo_item photo_big wow animate__swing" data-wow-duration="1s">
+                        <a data-fancybox="gallery" href="assets/images/gallery1.jpg">
+                            <picture>
+                                <source srcset="assets/images/gallery1.jpg" type="image/png" media="(min-width:1600px)">
+                                <source srcset="assets/images/gallery1-540.jpg" type="image/png"
+                                    media="(min-width:1590px)">
+                                <source srcset="assets/images/gallery1-470.jpg" type="image/png"
+                                    media="(min-width:1000px)">
+                                <source srcset="assets/images/gallery1.jpg" type="image/png" media="(min-width:641px)">
+                                <source srcset="assets/images/gallery1-400.jpg" type="image/png"
+                                    media="(min-width:401px)">
+                                <source srcset="assets/images/gallery1-360.jpg" type="image/png"
+                                    media="(max-width:400px)">
+                                <img src="assets/images/gallery1.jpg" alt="House">
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="photo_item wow animate__swing" data-wow-duration="1.5s">
+                        <a data-fancybox="gallery" href="assets/images/gallery2.jpg">
+                            <picture>
+                                <source srcset="assets/images/gallery2.jpg" type="image/png" media="(min-width:1600px)">
+                                <source srcset="assets/images/gallery2-260.jpg" type="image/png"
+                                    media="(mix-width:1590px)">
+                                <source srcset="assets/images/gallery2-230.jpg" type="image/png"
+                                    media="(min-width:1000px)">
+                                <source srcset="assets/images/gallery2.jpg" type="image/png" media="(min-width:641px)">
+                                <source srcset="assets/images/gallery2-190.jpg" type="image/png"
+                                    media="(min-width:401px)">
+                                <source srcset="assets/images/gallery2-170.jpg" type="image/png"
+                                    media="(max-width:400px)">
+                                <img src="assets/images/gallery2.jpg" alt="House">
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="photo_item wow animate__swing" data-wow-duration="2s">
+                        <a data-fancybox="gallery" href="assets/images/gallery3.jpg">
+                            <picture>
+                                <source srcset="assets/images/gallery3.jpg" type="image/png" media="(min-width:1600px)">
+                                <source srcset="assets/images/gallery3-260.jpg" type="image/png"
+                                    media="(mix-width:1590px)">
+                                <source srcset="assets/images/gallery3-230.jpg" type="image/png"
+                                    media="(min-width:1000px)">
+                                <source srcset="assets/images/gallery3.jpg" type="image/png" media="(min-width:641px)">
+                                <source srcset="assets/images/gallery3-190.jpg" type="image/png"
+                                    media="(min-width:401px)">
+                                <source srcset="assets/images/gallery3-170.jpg" type="image/png"
+                                    media="(max-width:400px)">
+                                <img src="assets/images/gallery3.jpg" alt="House">
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="photo_item wow animate__swing" data-wow-duration="2.5s">
+                        <a data-fancybox="gallery" href="assets/images/gallery4.jpg">
+                            <picture>
+                                <source srcset="assets/images/gallery4.jpg" type="image/png" media="(min-width:1600px)">
+                                <source srcset="assets/images/gallery4-260.jpg" type="image/png"
+                                    media="(mix-width:1590px)">
+                                <source srcset="assets/images/gallery4-230.jpg" type="image/png"
+                                    media="(min-width:1000px)">
+                                <source srcset="assets/images/gallery4.jpg" type="image/png" media="(min-width:641px)">
+                                <source srcset="assets/images/gallery4-190.jpg" type="image/png"
+                                    media="(min-width:401px)">
+                                <source srcset="assets/images/gallery4-170.jpg" type="image/png"
+                                    media="(max-width:400px)">
+                                <img src="assets/images/gallery4.jpg" alt="House">
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="photo_item wow animate__swing" data-wow-duration="3s">
+                        <a data-fancybox="gallery" href="assets/images/gallery5.jpg">
+                            <picture>
+                                <source srcset="assets/images/gallery5.jpg" type="image/png" media="(min-width:1600px)">
+                                <source srcset="assets/images/gallery5-260.jpg" type="image/png"
+                                    media="(mix-width:1590px)">
+                                <source srcset="assets/images/gallery5-230.jpg" type="image/png"
+                                    media="(min-width:1000px)">
+                                <source srcset="assets/images/gallery5.jpg" type="image/png" media="(min-width:641px)">
+                                <source srcset="assets/images/gallery5-190.jpg" type="image/png"
+                                    media="(min-width:401px)">
+                                <source srcset="assets/images/gallery5-170.jpg" type="image/png"
+                                    media="(max-width:400px)">
+                                <img src="assets/images/gallery5.jpg" alt="House">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <a class="btn" href="#"><span>see more</span></a>
+            </div>
+        </div>
+        <div id="map" class="map"></div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="contact" id="contact">
+                <h2>get in touch</h2>
+                <div class="information">
+                    <div class="about">
+                        <ul>
+                            <li><span class="icon-location"></span> Nolan Extensions Suite 670</li>
+                            <li><span class="icon-phone"></span> +001 356-868-2454</li>
+                            <li><span class="icon-email"></span> gahuy93@gmail.com</li>
+                            <li><span class="icon-clock"></span> From 07:05AM to 19:30PM</li>
+                        </ul>
+                    </div>
+                    <form method="POST">
+                        <input type="text" placeholder="Your name">
+                        <input type="email" placeholder="Email">
+                        <a class="btn" href="#"><span>submit</span></a>
+                    </form>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="logo">
+                    <a href="#"><img src="assets/images/logo.png" alt="Logo"></a>
+                    <div class="social">
+                        <ul>
+                            <li><a href="https://www.facebook.com/" target="_blank"><span
+                                        class="icon-facebook"></span></a></li>
+                            <li><a href="https://twitter.com/" target="_blank"><span class="icon-twitter"></span></a>
+                            </li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><span
+                                        class="icon-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copy">
+                    <div class="copyright firm">Copyrights &copy; 2017 Monticello Group</div>
+                    <div class="copyright designer">Made with <span class="icon-heart"></span> by Ga Huy</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="assets/plugins/fancybox-master/jquery.fancybox.min.js" defer></script>
+    <script src="assets/plugins/slider/slick.min.js" defer></script>
+    <script src="assets/plugins/leaflet/leaflet.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="assets/js/main.min.js" defer></script>
+
+</body>
+
+</html>
